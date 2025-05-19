@@ -1,0 +1,29 @@
+https://www.python.org/downloads/release/python-390/  -- pythin 3.9
+
+https://pypi.org/project/SpeechRecognition/#files
+
+pip install "C:\Users\11170\Downloads\speechrecognition-3.14.0.tar.gz"
+
+pip install numpy librosa scipy
+
+ pip install PyAudio-0.2.11-cp39-cp39-win_amd64.whl -- download this file and move to project location
+
+pip show pyaudio
+
+
+pip install sounddevice
+
+
+
+
+---- speaker verification or speaker recognition. 
+
+For personalized voice recognition, you can use libraries like librosa for feature extraction and numpy/scipy for similarity calculations. Install these first:
+
+
+https://github.com/BRIAN-THOMAS-02/PyAudio/blob/main/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
+
+
+-------------/////////////////////----------------
+interphasing with google firebase
+-- pip install firebase-admin

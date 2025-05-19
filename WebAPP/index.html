@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheelchair Control</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Wheelchair Control Panel</h1>
+    
+    <div class="button-container">
+      <button id="forward" onclick="sendCommand('forward')">Forward</button>
+      <div class="middle-buttons">
+        <button id="left" onclick="sendCommand('left')">Left</button>
+        <button id="stop" onclick="sendCommand('stop')">Stop</button>
+        <button id="right" onclick="sendCommand('right')">Right</button>
+      </div>
+      <button id="backward" onclick="sendCommand('back')">Backward</button>
+    </div>
+
+    <div class="servo-control">
+      <h2>Back Rest Position</h2>
+      <input type="range" id="servo1-slider" min="0" max="40" value="0" oninput="updateServo('servo1', this.value)">
+      <p id="servo1-angle">Angle: 0°</p>
+    </div>
+
+    <div class="servo-control">
+      <h2>Foot Rest Position</h2>
+      <input type="range" id="servo2-slider" min="0" max="90" value="0" oninput="updateServo('servo2', this.value)">
+      <p id="servo2-angle">Angle: 0°</p>
+    </div>
+
+    <div class="speed-control">
+      <h2>Wheelchair Speed</h2>
+      <input type="range" id="speed-slider" min="10" max="255" value="10" oninput="updateSpeed(this.value)">
+      <p id="speed-value">Speed: 10</p>
+    </div>
+
+    <!-- Status Message (Includes accident warning) -->
+    <div id="status" class="status-message">Status: Waiting for commands...</div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
